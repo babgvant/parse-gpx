@@ -10,7 +10,8 @@ const parseTrack = track =>  {
         lng = (t['$'].lng || t['$'].lon),
         timestamp = t.time[0],
         hr,
-        cadence;
+        cadence,
+        power = 0;
 
     if(t.extensions) {
       var extensions = t.extensions[0];
@@ -26,21 +27,26 @@ const parseTrack = track =>  {
             if(k2.indexOf('cadence') > -1) {
               cadence = extension[k2][0];
             }
+            if(k2.indexOf('power') > -1) {
+              power = extension[k2][0];
+            }
           }
         } else {
             // topografix gpx
             if(k.indexOf('hr') > -1) {
               hr = extension;
             }
-
             if(k.indexOf('cadence') > -1) {
               cadence = extension;
+            }            
+            if(k.indexOf('power') > -1) {
+              power = extension;
             }
         }
       }
     }
 
-    return new TrackPoint(elevation, lat, lng, timestamp, hr, cadence);
+    return new TrackPoint(elevation, lat, lng, timestamp, hr, cadence, power);
   });
 };
 
