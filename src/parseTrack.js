@@ -24,7 +24,7 @@ const parseTrack = track =>  {
             if(k2.indexOf('hr') > -1) {
               hr = extension[k2][0];
             }
-            if(k2.indexOf('cadence') > -1) {
+            if(k2.indexOf('cadence') > -1 || k2.indexOf('cad') > -1) {
               cadence = extension[k2][0];
             }
             if(k2.indexOf('power') > -1) {
