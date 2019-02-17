@@ -18,6 +18,7 @@ describe('TrackPoint', () => {
         tp.should.have.property('elevation');
         tp.should.have.property('heartrate');
         tp.should.have.property('cadence');
+        tp.should.have.property('power');
 
         tp = new TrackPoint(1,2,3,"2016-06-09T15:59:45.000Z", 160);
         tp.heartrate.should.equal(160);
