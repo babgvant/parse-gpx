@@ -2,13 +2,13 @@
 
 class TrackPoint {
     constructor(el, lat, lng, time, heartrate, cadence, power) {
-        this.elevation = el;
-        this.latitude = lat;
-        this.longitude = lng;
+        this.elevation = parseFloat(el);
+        this.latitude = parseFloat(lat);
+        this.longitude = parseFloat(lng);
         this.timestamp = time;
-        this.heartrate = heartrate;
-        this.cadence = cadence;
-        this.power = power;
+        this.heartrate = parseInt(heartrate);
+        this.cadence = parseInt(cadence);
+        this.power = parseInt(power);
     }
 }
 
