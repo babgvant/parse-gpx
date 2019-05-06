@@ -1,7 +1,7 @@
 "use strict";
 
 class TrackPoint {
-    constructor(el, lat, lng, time, heartrate, cadence, power) {
+    constructor(el, lat, lng, time, heartrate, cadence, power, temperature) {
         this.elevation = parseFloat(el);
         this.latitude = parseFloat(lat);
         this.longitude = parseFloat(lng);
@@ -9,6 +9,7 @@ class TrackPoint {
         this.heartrate = parseInt(heartrate);
         this.cadence = parseInt(cadence);
         this.power = parseInt(power);
+        this.temperature = parseFloat(temperature);
     }
 }
 
